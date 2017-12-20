@@ -11,20 +11,20 @@ q = 0
 
 
 def beam_search():
-    candidateQueue = Queue()
-    resultSet = PriorityQueue(q)
+    candidate_queue = Queue()
+    result_set = PriorityQueue(q)
     for level in range(1, d):
         beam = PriorityQueue(w)
-        while candidateQueue.not_empty:
-            seed = candidateQueue.get()
+        while candidate_queue.not_empty:
+            seed = candidate_queue.get()
             set = n(seed)
             for desc in set:
                 quality = phi(desc)
                 if desc.satisfiesAll(C):
-                    resultSet.put(desc.quality)
+                    result_set.put(desc.quality)
                     beam.put(desc.quality)
             while beam.not_empty:
-                candidateQueue.put(beam.get())
+                candidate_queue.put(beam.get())
 
 def n():
 
