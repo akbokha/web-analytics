@@ -1,7 +1,6 @@
 import heapq
-from heapq import heappush, heappop
 
-class priority_queue:
+class NonBlockingPriorityQueue:
     def __init__(self, max_size):
         self.items = []
         self.max = max_size
@@ -35,27 +34,27 @@ def phiSet(desc):
 
 def phiYule(Set):
 
-def constraints(descList):
-    return len(descList) > 20
+def constraints(desc_list):
+    return len(desc_list) > 20
 
 def phiEntropy(Set):
 
 def beam_search(d, w, q, qualityFunc, satisfies, refinement, desclist):
-    candidateQueue = []
-    resultSet = priorityMax(q)
+    candidate_queue = []
+    result_set = NonBlockingPriorityQueue(q)
     for level in range(0, d):
-        beam = priorityMax(w)
-        while candidateQueue.not_empty:
-            seed = candidateQueue.get()
+        beam = NonBlockingPriorityQueue(w)
+        while candidate_queue.not_empty:
+            seed = candidate_queue.get()
             set_refined = refinement(seed)
             for desc in set_refined:
                 quality = phiYule(desc)
                 if desc.satisfiesAll(C):
-                    resultSet.put(desc.quality)
+                    result_set.put(desc.quality)
                     beam.put(desc.quality)
             while beam.not_empty:
-                candidateQueue.put(beam.get())
-    return resultSet
+                candidate_queue.put(beam.get())
+    return result_set
 
 result = beam_search(d=2, w=5, q=5, qualityFunc = phiYule, satisfies = constraints, refinement, df)
 result
