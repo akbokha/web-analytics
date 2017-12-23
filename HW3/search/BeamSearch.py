@@ -1,35 +1,22 @@
-import heapq
+import csv
+from HW3.search.NonBlockingPriorityQueue import NonBlockingPriorityQueue
 
-class NonBlockingPriorityQueue:
-    def __init__(self, max_size):
-        self.items = []
-        self.max = max_size
-        self.index = 0
-
-    def push(self, item, priority):
-        #heapq.heappush(self.items, (-priority, x))
-        if len(self.items) < self.max:
-            heapq.heappush(self.items, (-priority, self.index, item))
-            self.index += 1
+def parsecsv(path):
+    file = open(path)
+    reader = csv.reader(file)
+    data = []
+    attributes = []
+    for index, row in enumerate(reader):
+        row = list(map(lambda x: None if x == '' else x, row))
+        if index == 0:
+            for col in row:
+                attributes.append((col, set()))
         else:
-        # Equivalent to a push, then a pop, but faster
-        #spilled_value =
-            heapq.heappushpop(self.items, (-priority, self.index, item))
-            self.index += 1
-
-    def pop(self):
-        return heapq.heappop(self.items)[-1]
-
-    def empty(self):
-        return not self.items
-
-    def print_elements(self):
-        result = []
-        for i in self.items:
-            result.append(i)
-        return result
-
-
+            data.append(row)
+            for i, col in enumerate(row):
+                attributes[i][1].add(col)
+    attributes = list(map(lambda x: (x[0], list(x[1])), attributes))
+    return data, attributes
 def phiSet(desc):
 
 def phiYule(Set):
