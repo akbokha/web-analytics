@@ -2,21 +2,18 @@ class NonBlockingPriorityQueue:
     def __init__(self, max_size):
         self.items = []
         self.max = max_size
-        self.index = 0
 
     def push(self, item, priority):
-        #heapq.heappush(self.items, (-priority, x))
         if len(self.items) < self.max:
-            heapq.heappush(self.items, (-priority, self.index, item))
-            self.index += 1
+            heapq.heappush(self.items, (priority, item))
         else:
-        # Equivalent to a push, then a pop, but faster
-        #spilled_value =
-            heapq.heappushpop(self.items, (-priority, self.index, item))
-            self.index += 1
+            heapq.heappushpop(self.items, (priority, item))
 
     def pop(self):
-        return heapq.heappop(self.items)[-1]
+        return heapq.heappop(self.items)
+
+    def get_max_item(self):
+        return self.items[0]
 
     def empty(self):
         return not self.items
@@ -26,3 +23,6 @@ class NonBlockingPriorityQueue:
         for i in self.items:
             result.append(i)
         return result
+
+    def heap_sort(self):
+        return [heapq.heappop(self.items) for _ in range(len(self.items))]
