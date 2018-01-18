@@ -6,4 +6,4 @@ Web Analytics Assignments
 3. Exceptional Model Mining vs A/B Testing; implementation-, extension/modification- and evaluation of the beam-search algorithm
 4. PageRank stability (on evolving graphs) and Community structure on graphs
 
-E. Evolving Network Analysis
+ADV: Evolving Network Analysis (static and temporal networks)
