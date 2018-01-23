@@ -1,3 +1,6 @@
 .ipynb_checkpoints
 meta_data.tsv
 tgraph_real_wikiedithyperlinks.txt
+tgraph_real_wikiedithyperlinks_NoTime.txt
+tgraph_real_wikiedithyperlinks.csv
+tgraph_real_wikiedithyperlinks_NoTime.csv
