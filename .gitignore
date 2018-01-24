@@ -6,3 +6,6 @@ tgraph_real_wikiedithyperlinks.csv
 tgraph_real_wikiedithyperlinks_NoTime.csv
 ADV/data/cluster_score.csv
 ADV/data/readme.txt
+*.edgelist
+ADV/data/cluster_score_directed.csv
+ADV/data/df_cc.csv
