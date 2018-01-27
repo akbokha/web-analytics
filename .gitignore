@@ -14,3 +14,7 @@ ADV/task2_cluster/df_cluster_score_temp_2.csv
 ADV/task2_cluster/df_cluster_score_temp_4.csv
 ADV/task2_cluster/df_cluster_score_temp_3.csv
 *.gml
+ADV/data/df_cc_temp_1.csv
+ADV/data/df_cc_temp_2.csv
+ADV/data/df_cc_temp_3.csv
+ADV/data/df_cc_temp_4.csv
